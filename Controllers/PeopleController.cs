@@ -55,9 +55,9 @@ namespace AvaliacaoNetApiWeb.Controllers
             _repository.CreatePeople(people);
             _repository.SaveChanges();
 
-            var peopleReadDto = _mapper.Map<PeopleReadDto>(people);
+            //var peopleReadDto = _mapper.Map<PeopleReadDto>(people);
 
-            return CreatedAtRoute(nameof(GetPeopleById), new { Id = peopleReadDto.Id }, peopleReadDto);
+            return NoContent();//CreatedAtRoute(nameof(GetPeopleById), new { Id = peopleReadDto.Id }, peopleReadDto);
 
         }
 
