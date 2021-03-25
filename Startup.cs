@@ -30,9 +30,12 @@ namespace AvaliacaoNetApiWeb
 
             services.AddControllers();
 
-            services.AddScoped<IPeopleRepo, MockPeopleRepo>();
+            /*services.AddScoped<IPeopleRepo, MockPeopleRepo>();
             services.AddScoped<IPhoneRepo, MockPhoneRepo>();
-            services.AddScoped<IAddressRepo, MockAddressRepo>();
+            services.AddScoped<IAddressRepo, MockAddressRepo>();*/
+            //services.AddScoped<IPeopleRepo, SqlPeopleRepo>();
+            services.AddScoped<IPhoneRepo, SqlPhoneRepo>();
+            services.AddScoped<IAddressRepo, SqlAddressRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
