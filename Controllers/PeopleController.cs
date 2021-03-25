@@ -60,5 +60,24 @@ namespace AvaliacaoNetApiWeb.Controllers
             return CreatedAtRoute(nameof(GetPeopleById), new { Id = peopleReadDto.Id }, peopleReadDto);
 
         }
+
+        //PUT api/peoples/{id}
+        [HttpPut("{id}")]
+        public ActionResult UpdatePeople(int Id, PeopleUpdateDto peopleUpdateDto)
+        {
+            var people = _repository.GetPeopleById(Id);
+
+            if (people == null)
+                return NotFound();
+
+            _mapper.Map(peopleUpdateDto, people);
+
+            _repository.UpdatePeople(people);
+
+            _repository.SaveChanges();
+
+            return NoContent();
+
+        }
     }
 }
