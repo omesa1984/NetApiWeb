@@ -79,5 +79,21 @@ namespace AvaliacaoNetApiWeb.Controllers
             return NoContent();
 
         }
+
+        //DELETE api/address/{id}
+        [HttpDelete("{id}")]
+        public ActionResult DeleteAddress(int Id)
+        {
+            var address = _repository.GetAddressById(Id);
+
+            if (address == null)
+                return NotFound();
+
+            _repository.DeleteAddress(address);
+
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
     }
 }

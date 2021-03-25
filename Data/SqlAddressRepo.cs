@@ -27,7 +27,12 @@ namespace AvaliacaoNetApiWeb.Data
 
         public void DeleteAddress(Address address)
         {
-            throw new NotImplementedException();
+            if (address == null)
+            {
+                throw new ArgumentNullException(nameof(address));
+            }
+
+            _context.Address.Remove(address);
         }
 
         public Address GetAddressById(int Id)
