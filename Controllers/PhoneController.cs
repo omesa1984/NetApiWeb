@@ -48,16 +48,16 @@ namespace AvaliacaoNetApiWeb.Controllers
 
         //POST api/phones
         [HttpPost]
-        public ActionResult<PhoneReadDto> CreatePhone(PhoneCreateDto phoCreateDto)
+        public ActionResult<PhoneReadDto> CreatePhone(PhoneCreateDto phoneCreateDto)
         {
-            var phone = _mapper.Map<Phone>(phoCreateDto);
+            var phone = _mapper.Map<Phone>(phoneCreateDto);
 
             _repository.CreatePhone(phone);
             _repository.SaveChanges();
 
-            var phoReadDto = _mapper.Map<PhoneReadDto>(phone);
+            var phoneReadDto = _mapper.Map<PhoneReadDto>(phone);
 
-            return CreatedAtRoute(nameof(GetPhoneById), new { Id = phoReadDto.Id }, phoReadDto);
+            return CreatedAtRoute(nameof(GetPhoneById), new { Id = phoneReadDto.Id }, phoneReadDto);
 
         }
 

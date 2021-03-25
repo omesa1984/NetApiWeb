@@ -45,5 +45,20 @@ namespace AvaliacaoNetApiWeb.Controllers
 
             return NotFound();
         }
+
+        //POST api/peoples
+        [HttpPost]
+        public ActionResult<PeopleReadDto> CreatePeople(PeopleCreateDto peopleCreateDto)
+        {
+            var people = _mapper.Map<People>(peopleCreateDto);
+
+            _repository.CreatePeople(people);
+            _repository.SaveChanges();
+
+            var peopleReadDto = _mapper.Map<PeopleReadDto>(people);
+
+            return CreatedAtRoute(nameof(GetPeopleById), new { Id = peopleReadDto.Id }, peopleReadDto);
+
+        }
     }
 }
