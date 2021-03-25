@@ -7,7 +7,7 @@ namespace AvaliacaoNetApiWeb.Dtos
 {
     public class PhoneReadDto
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
 
         public String Tipo { get; set; }
 

@@ -57,7 +57,7 @@ namespace AvaliacaoNetApiWeb.Controllers
 
             var addressReadDto = _mapper.Map<AddressReadDto>(address);
 
-            return CreatedAtRoute(nameof(GetAddressById), new { Id = addressReadDto.Id }, addressReadDto);
+            return NoContent(); //CreatedAtRoute(nameof(GetAddressById), new { Id = addressReadDto.Id }, addressReadDto);
 
         }
 

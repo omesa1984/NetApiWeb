@@ -7,7 +7,7 @@ namespace AvaliacaoNetApiWeb.Dtos
 {
     public class PeopleReadDto
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
 
         public String Nome { get; set; }
 

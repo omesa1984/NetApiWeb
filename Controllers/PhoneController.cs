@@ -57,7 +57,7 @@ namespace AvaliacaoNetApiWeb.Controllers
 
             var phoneReadDto = _mapper.Map<PhoneReadDto>(phone);
 
-            return CreatedAtRoute(nameof(GetPhoneById), new { Id = phoneReadDto.Id }, phoneReadDto);
+            return NoContent(); //CreatedAtRoute(nameof(GetPhoneById), new { Id = phoneReadDto.Id }, phoneReadDto);
 
         }
 
