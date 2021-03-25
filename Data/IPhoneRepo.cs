@@ -16,5 +16,7 @@ namespace AvaliacaoNetApiWeb.Data
         void CreatePhone(Phone phone);
 
         void UpdatePhone(Phone phone);
+
+        void DeletePhone(Phone phone);
     }
 }

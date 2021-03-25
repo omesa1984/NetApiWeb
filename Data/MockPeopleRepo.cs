@@ -13,6 +13,11 @@ namespace AvaliacaoNetApiWeb.Data
             throw new NotImplementedException();
         }
 
+        public void DeletePeople(People people)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<People> GetAllPeoples()
         {
             var phone = new Phone { Id = 0, Tipo = "celular", Numero = "(21) 969710-949" };

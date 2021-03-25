@@ -16,5 +16,7 @@ namespace AvaliacaoNetApiWeb.Data
         void CreateAddress(Address address);
 
         void UpdateAddress(Address address);
+
+        void DeleteAddress(Address address);
     }
 }

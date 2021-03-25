@@ -16,5 +16,7 @@ namespace AvaliacaoNetApiWeb.Data
         void CreatePeople(People people);
 
         void UpdatePeople(People people);
+
+        void DeletePeople(People people);
     }
 }

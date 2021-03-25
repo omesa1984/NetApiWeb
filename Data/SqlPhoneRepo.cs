@@ -25,6 +25,16 @@ namespace AvaliacaoNetApiWeb.Data
             _context.Phones.Add(pho);
         }
 
+        public void DeletePhone(Phone phone)
+        {
+            if (phone == null)
+            {
+                throw new ArgumentNullException(nameof(phone));
+            }
+
+            _context.Phones.Remove(phone);
+        }
+
         public IEnumerable<Phone> GetAllPhones()
         {
             return _context.Phones.ToList();

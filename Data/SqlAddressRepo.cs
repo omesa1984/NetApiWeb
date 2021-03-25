@@ -25,6 +25,11 @@ namespace AvaliacaoNetApiWeb.Data
             _context.Address.Add(add);
         }
 
+        public void DeleteAddress(Address address)
+        {
+            throw new NotImplementedException();
+        }
+
         public Address GetAddressById(int Id)
         {
             return _context.Address.FirstOrDefault(p => p.Id == Id);

@@ -38,5 +38,10 @@ namespace AvaliacaoNetApiWeb.Data
         {
             throw new NotImplementedException();
         }
+
+        public void DeleteAddress(Address address)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

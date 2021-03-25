@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+using Newtonsoft.Json.Serialization;
+
 namespace AvaliacaoNetApiWeb
 {
     public class Startup
@@ -28,7 +30,9 @@ namespace AvaliacaoNetApiWeb
         {
             services.AddDbContext<AvaliacaoDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("NetApiWebConnection")));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(s => {
+                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

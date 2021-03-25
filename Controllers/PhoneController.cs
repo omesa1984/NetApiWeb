@@ -77,8 +77,26 @@ namespace AvaliacaoNetApiWeb.Controllers
              _repository.SaveChanges();
 
              return NoContent();
-            
+
         }
+
+        //DELETE api/phones/{id}
+        [HttpDelete("{id}")]
+        public ActionResult DeletePhone(int Id)
+        {
+            var phone = _repository.GetPhoneById(Id);
+
+            if (phone == null)
+                return NotFound();
+
+            _repository.DeletePhone(phone);
+
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
+
+
 
     }
 }

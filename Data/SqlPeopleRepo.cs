@@ -26,6 +26,11 @@ namespace AvaliacaoNetApiWeb.Data
             _context.Peoples.Add(peop);
         }
 
+        public void DeletePeople(People people)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<People> GetAllPeoples()
         {
             //return _context.Peoples.ToList();
