@@ -15,6 +15,16 @@ namespace AvaliacaoNetApiWeb.Data
             _context = context;
         }
 
+        public void CreateAddress(Address add)
+        {
+            if (add == null)
+            {
+                throw new ArgumentNullException(nameof(add));
+            }
+
+            _context.Address.Add(add);
+        }
+
         public Address GetAddressById(int Id)
         {
             return _context.Address.FirstOrDefault(p => p.Id == Id);
@@ -23,6 +33,11 @@ namespace AvaliacaoNetApiWeb.Data
         public IEnumerable<Address> GetAllAddress()
         {
             return _context.Address.ToList();
+        }
+
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges() >= 0);
         }
     }
 }

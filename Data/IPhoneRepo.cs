@@ -8,7 +8,11 @@ namespace AvaliacaoNetApiWeb.Data
 {
     public interface IPhoneRepo
     {
+        bool SaveChanges();
+
         IEnumerable<Phone> GetAllPhones();
         Phone GetPhoneById(int Id);
+
+        void CreatePhone(Phone pho);
     }
 }

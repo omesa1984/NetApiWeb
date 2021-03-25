@@ -8,7 +8,11 @@ namespace AvaliacaoNetApiWeb.Data
 {
     public interface IPeopleRepo
     {
+        bool SaveChanges();
+
         IEnumerable<People> GetAllPeoples();
         People GetPeopleById(int Id);
+
+        void CreatePeople(People peop);
     }
 }

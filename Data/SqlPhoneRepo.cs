@@ -15,6 +15,16 @@ namespace AvaliacaoNetApiWeb.Data
             _context = context;
         }
 
+        public void CreatePhone(Phone pho)
+        {
+            if(pho == null)
+            {
+                throw new ArgumentNullException(nameof(pho));
+            }
+
+            _context.Phones.Add(pho);
+        }
+
         public IEnumerable<Phone> GetAllPhones()
         {
             return _context.Phones.ToList();
@@ -23,6 +33,11 @@ namespace AvaliacaoNetApiWeb.Data
         public Phone GetPhoneById(int Id)
         {
             return _context.Phones.FirstOrDefault(p => p.Id == Id);
+        }
+
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges() >= 0);
         }
     }
 }

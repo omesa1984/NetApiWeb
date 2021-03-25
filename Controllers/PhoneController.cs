@@ -33,7 +33,7 @@ namespace AvaliacaoNetApiWeb.Controllers
         }
 
         //GET api/phones/{id}
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetPhoneById")]
         public ActionResult<PhoneReadDto> GetPhoneById(int Id)
         {
             var phoneItems = _repository.GetPhoneById(Id);
@@ -44,6 +44,21 @@ namespace AvaliacaoNetApiWeb.Controllers
             }
 
             return NotFound();
+        }
+
+        //POST api/phones
+        [HttpPost]
+        public ActionResult<PhoneReadDto> CreatePhone(PhoneCreateDto phoCreateDto)
+        {
+            var phone = _mapper.Map<Phone>(phoCreateDto);
+
+            _repository.CreatePhone(phone);
+            _repository.SaveChanges();
+
+            var phoReadDto = _mapper.Map<PhoneReadDto>(phone);
+
+            return CreatedAtRoute(nameof(GetPhoneById), new { Id = phoReadDto.Id }, phoReadDto);
+
         }
     }
 }

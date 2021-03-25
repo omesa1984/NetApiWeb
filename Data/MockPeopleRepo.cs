@@ -8,6 +8,11 @@ namespace AvaliacaoNetApiWeb.Data
 {
     public class MockPeopleRepo : IPeopleRepo
     {
+        public void CreatePeople(People peop)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<People> GetAllPeoples()
         {
             var phone = new Phone { Id = 0, Tipo = "celular", Numero = "(21) 969710-949" };
@@ -30,6 +35,10 @@ namespace AvaliacaoNetApiWeb.Data
 
             return new People { Id = 0, Nome = "Oslien", Cpf = "063.917.357-86", Rg = "G784596-V", Phone = phone, Phone_People_Id = Id, Address = address, Address_People_Id = Id };
         }
-        
+
+        public bool SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

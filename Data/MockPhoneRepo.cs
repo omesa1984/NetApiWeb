@@ -8,6 +8,11 @@ namespace AvaliacaoNetApiWeb.Data
 {
     public class MockPhoneRepo : IPhoneRepo
     {
+        public void CreatePhone(Phone pho)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Phone> GetAllPhones()
         {
             var phones = new List<Phone>()
@@ -23,6 +28,11 @@ namespace AvaliacaoNetApiWeb.Data
         public Phone GetPhoneById(int Id)
         {
             return new Phone { Id = 0, Tipo = "celular", Numero = "(21) 969710-949" };
+        }
+
+        public bool SaveChanges()
+        {
+            throw new NotImplementedException();
         }
     }
 }

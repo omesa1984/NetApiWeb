@@ -14,10 +14,13 @@ namespace AvaliacaoNetApiWeb.Profiles
         {
             //Source -> Target
             CreateMap<People, PeopleReadDto>();
+            CreateMap<PeopleCreateDto, People>();
 
             CreateMap<Phone, PhoneReadDto>();
+            CreateMap<PhoneCreateDto, Phone>();
 
             CreateMap<Address, AddressReadDto>();
+            CreateMap<AddressCreateDto, Address>();
         }
 
     }

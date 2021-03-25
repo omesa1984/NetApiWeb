@@ -8,7 +8,11 @@ namespace AvaliacaoNetApiWeb.Data
 {
     public interface IAddressRepo
     {
+        bool SaveChanges();
+
         IEnumerable<Address> GetAllAddress();
         Address GetAddressById(int Id);
+
+        void CreateAddress(Address add);
     }
 }

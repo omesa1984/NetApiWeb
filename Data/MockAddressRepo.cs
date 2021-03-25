@@ -23,5 +23,15 @@ namespace AvaliacaoNetApiWeb.Data
         {
             return new Address { Id = 0, Cep = "20251-540", Logradouro = "Rua Paraiso", Numero = "94", Complemento = "SB", Bairro = "Santa Teresa", Municipio = "Rio de Janeiro", Uf = "RJ" };
         }
+
+        public bool SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreateAddress(Address add)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
