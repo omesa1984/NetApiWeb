@@ -7,6 +7,8 @@ namespace AvaliacaoNetApiWeb.Dtos
 {
     public class AddressReadDto
     {
+        public int Id { get; set; }
+
         public String Cep { get; set; }
 
         public String Logradouro { get; set; }

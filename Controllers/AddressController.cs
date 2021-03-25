@@ -47,21 +47,18 @@ namespace AvaliacaoNetApiWeb.Controllers
         }
 
         //POST api/address
-        /*[HttpPost]
-        public ActionResult<AddressReadDto> CreateAddress(AddressCreateDto addCreateDto)
+        [HttpPost]
+        public ActionResult<AddressReadDto> CreateAddress(AddressCreateDto addressCreateDto)
         {
-            var address = _mapper.Map<Address>(addCreateDto);
-            //var phone = _mapper.Map<Phone>(phoCreateDto);
+            var address = _mapper.Map<Address>(addressCreateDto);
 
             _repository.CreateAddress(address);
-            //_repository.CreatePhone(phone);
             _repository.SaveChanges();
-            //_repository.SaveChanges();
-            var addReadDto = _mapper.Map<PhoneReadDto>(address);
-            //var phoReadDto = _mapper.Map<PhoneReadDto>(phone);
-            return CreatedAtRoute(nameof(GetAddressById), new { Id = addReadDto.Id }, addReadDto);
-            //return CreatedAtRoute(nameof(GetPhoneById), new { Id = phoReadDto.Id }, phoReadDto);
 
-        }*/
+            var addressReadDto = _mapper.Map<AddressReadDto>(address);
+
+            return CreatedAtRoute(nameof(GetAddressById), new { Id = addressReadDto.Id }, addressReadDto);
+
+        }
     }
 }

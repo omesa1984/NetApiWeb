@@ -8,6 +8,9 @@ namespace AvaliacaoNetApiWeb.Dtos
 {
     public class AddressCreateDto
     {
+        [Key]
+        public int Id { get; set; }
+
         [Required]
         [MaxLength(10)]
         public String Cep { get; set; }
