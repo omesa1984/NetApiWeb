@@ -79,5 +79,21 @@ namespace AvaliacaoNetApiWeb.Controllers
             return NoContent();
 
         }
+
+        //DELETE api/peoples/{id}
+        [HttpDelete("{id}")]
+        public ActionResult DeletePeople(int Id)
+        {
+            var people = _repository.GetPeopleById(Id);
+
+            if (people == null)
+                return NotFound();
+
+            _repository.DeletePeople(people);
+
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
     }
 }

@@ -28,7 +28,12 @@ namespace AvaliacaoNetApiWeb.Data
 
         public void DeletePeople(People people)
         {
-            throw new NotImplementedException();
+            if (people == null)
+            {
+                throw new ArgumentNullException(nameof(people));
+            }
+
+            _context.Peoples.Remove(people);
         }
 
         public IEnumerable<People> GetAllPeoples()
