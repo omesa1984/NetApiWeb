@@ -2,6 +2,7 @@ using AvaliacaoNetApiWeb.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +26,8 @@ namespace AvaliacaoNetApiWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<AvaliacaoDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("NetApiWebConnection")));
+
             services.AddControllers();
 
             services.AddScoped<IPeopleRepo, MockPeopleRepo>();

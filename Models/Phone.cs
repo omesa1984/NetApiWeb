@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,14 +8,14 @@ namespace AvaliacaoNetApiWeb.Models
 {
     public class Phone
     {
-        //[Key]
+        [Key]
         public int Id { get; set; }
 
-        //[Required]
+        [Required]
         public String Tipo { get; set; }
 
-        //[Required]
-        //[MaxLength(18)]
+        [Required]
+        [MaxLength(18)]
         public String Numero { get; set; }
     }
 }
