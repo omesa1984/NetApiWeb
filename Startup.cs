@@ -30,9 +30,8 @@ namespace AvaliacaoNetApiWeb
 
             services.AddControllers();
 
-            /*services.AddScoped<IPeopleRepo, MockPeopleRepo>();
-            services.AddScoped<IPhoneRepo, MockPhoneRepo>();
-            services.AddScoped<IAddressRepo, MockAddressRepo>();*/
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             services.AddScoped<IPeopleRepo, SqlPeopleRepo>();
             services.AddScoped<IPhoneRepo, SqlPhoneRepo>();
             services.AddScoped<IAddressRepo, SqlAddressRepo>();

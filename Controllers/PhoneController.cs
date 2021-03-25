@@ -1,4 +1,6 @@
-﻿using AvaliacaoNetApiWeb.Data;
+﻿using AutoMapper;
+using AvaliacaoNetApiWeb.Data;
+using AvaliacaoNetApiWeb.Dtos;
 using AvaliacaoNetApiWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,28 +15,35 @@ namespace AvaliacaoNetApiWeb.Controllers
     public class PhoneController : ControllerBase
     {
         private readonly IPhoneRepo _repository;
+        private readonly IMapper _mapper;
 
-        public PhoneController(IPhoneRepo repository)
+        public PhoneController(IPhoneRepo repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         //GET api/phones
         [HttpGet]
-        public ActionResult<IEnumerable<Phone>> GetAllPhones()
+        public ActionResult<IEnumerable<PhoneReadDto>> GetAllPhones()
         {
             var phoneItmes = _repository.GetAllPhones();
 
-            return Ok(phoneItmes);
+            return Ok(_mapper.Map<IEnumerable<PhoneReadDto>>(phoneItmes));
         }
 
         //GET api/phones/{id}
         [HttpGet("{id}")]
-        public ActionResult<Phone> GetPhoneById(int Id)
+        public ActionResult<PhoneReadDto> GetPhoneById(int Id)
         {
             var phoneItems = _repository.GetPhoneById(Id);
 
-            return Ok(phoneItems);
+            if(phoneItems != null)
+            {
+                return Ok(_mapper.Map<PhoneReadDto>(phoneItems));
+            }
+
+            return NotFound();
         }
     }
 }
