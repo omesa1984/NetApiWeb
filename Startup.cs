@@ -33,7 +33,7 @@ namespace AvaliacaoNetApiWeb
             /*services.AddScoped<IPeopleRepo, MockPeopleRepo>();
             services.AddScoped<IPhoneRepo, MockPhoneRepo>();
             services.AddScoped<IAddressRepo, MockAddressRepo>();*/
-            //services.AddScoped<IPeopleRepo, SqlPeopleRepo>();
+            services.AddScoped<IPeopleRepo, SqlPeopleRepo>();
             services.AddScoped<IPhoneRepo, SqlPhoneRepo>();
             services.AddScoped<IAddressRepo, SqlAddressRepo>();
         }
