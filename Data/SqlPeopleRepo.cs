@@ -16,14 +16,14 @@ namespace AvaliacaoNetApiWeb.Data
             _context = context;
         }
 
-        public void CreatePeople(People peop)
+        public void CreatePeople(People people)
         {
-            if (peop == null)
+            if (people == null)
             {
-                throw new ArgumentNullException(nameof(peop));
+                throw new ArgumentNullException(nameof(people));
             }
 
-            _context.Peoples.Add(peop);
+            _context.Peoples.Add(people);
         }
 
         public void DeletePeople(People people)
