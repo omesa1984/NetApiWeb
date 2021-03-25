@@ -60,5 +60,24 @@ namespace AvaliacaoNetApiWeb.Controllers
             return CreatedAtRoute(nameof(GetAddressById), new { Id = addressReadDto.Id }, addressReadDto);
 
         }
+
+        //PUT api/address/{id}
+        [HttpPut("{id}")]
+        public ActionResult UpdateAddress(int Id, AddressUpdateDto addressUpdateDto)
+        {
+            var address = _repository.GetAddressById(Id);
+
+            if (address == null)
+                return NotFound();
+
+            _mapper.Map(addressUpdateDto, address);
+
+            _repository.UpdateAddress(address);
+
+            _repository.SaveChanges();
+
+            return NoContent();
+
+        }
     }
 }
