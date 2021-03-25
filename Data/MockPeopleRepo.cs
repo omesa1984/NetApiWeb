@@ -40,5 +40,10 @@ namespace AvaliacaoNetApiWeb.Data
         {
             throw new NotImplementedException();
         }
+
+        public void UpdatePeople(People people)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

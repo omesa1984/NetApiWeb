@@ -33,5 +33,10 @@ namespace AvaliacaoNetApiWeb.Data
         {
             throw new NotImplementedException();
         }
+
+        public void UpdateAddress(Address address)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -15,12 +15,15 @@ namespace AvaliacaoNetApiWeb.Profiles
             //Source -> Target
             CreateMap<People, PeopleReadDto>();
             CreateMap<PeopleCreateDto, People>();
+            CreateMap<PeopleUpdateDto, People>();
 
             CreateMap<Phone, PhoneReadDto>();
             CreateMap<PhoneCreateDto, Phone>();
+            CreateMap<PhoneUpdateDto, Phone>();
 
             CreateMap<Address, AddressReadDto>();
             CreateMap<AddressCreateDto, Address>();
+            CreateMap<AddressUpdateDto, Address>();
         }
 
     }

@@ -34,5 +34,10 @@ namespace AvaliacaoNetApiWeb.Data
         {
             throw new NotImplementedException();
         }
+
+        public void UpdatePhone(Phone phone)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

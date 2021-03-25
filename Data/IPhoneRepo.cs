@@ -13,6 +13,8 @@ namespace AvaliacaoNetApiWeb.Data
         IEnumerable<Phone> GetAllPhones();
         Phone GetPhoneById(int Id);
 
-        void CreatePhone(Phone pho);
+        void CreatePhone(Phone phone);
+
+        void UpdatePhone(Phone phone);
     }
 }

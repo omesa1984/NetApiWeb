@@ -60,5 +60,25 @@ namespace AvaliacaoNetApiWeb.Controllers
             return CreatedAtRoute(nameof(GetPhoneById), new { Id = phoReadDto.Id }, phoReadDto);
 
         }
+
+        //PUT api/phones/{id}
+        [HttpPut("{id}")]
+        public ActionResult UpdatePhone(int Id, PhoneUpdateDto phoneUpdateDto)
+        {
+            var phone = _repository.GetPhoneById(Id);
+
+            if (phone == null)
+                return NotFound();
+
+             _mapper.Map(phoneUpdateDto, phone);
+
+             _repository.UpdatePhone(phone);
+
+             _repository.SaveChanges();
+
+             return NoContent();
+            
+        }
+
     }
 }

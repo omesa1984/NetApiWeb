@@ -13,6 +13,8 @@ namespace AvaliacaoNetApiWeb.Data
         IEnumerable<Address> GetAllAddress();
         Address GetAddressById(int Id);
 
-        void CreateAddress(Address add);
+        void CreateAddress(Address address);
+
+        void UpdateAddress(Address address);
     }
 }

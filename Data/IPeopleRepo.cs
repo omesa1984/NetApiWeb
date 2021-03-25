@@ -13,6 +13,8 @@ namespace AvaliacaoNetApiWeb.Data
         IEnumerable<People> GetAllPeoples();
         People GetPeopleById(int Id);
 
-        void CreatePeople(People peop);
+        void CreatePeople(People people);
+
+        void UpdatePeople(People people);
     }
 }

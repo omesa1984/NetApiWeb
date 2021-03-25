@@ -42,5 +42,10 @@ namespace AvaliacaoNetApiWeb.Data
         {
             return (_context.SaveChanges() >= 0);
         }
+
+        public void UpdatePeople(People people)
+        {
+            //Nothing
+        }
     }
 }
